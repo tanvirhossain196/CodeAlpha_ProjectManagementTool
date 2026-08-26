@@ -1,0 +1,3 @@
+-- Optional seed data is intentionally minimal.
+-- Register through the UI/API so password hashing is exercised correctly.
+-- This file exists as a safe starting point for project/label fixtures if desired.

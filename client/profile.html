@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Profile · ShilpoSetu</title>
+  <link rel="stylesheet" href="/css/reset.css">
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/layout.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/dashboard.css">
+  <link rel="stylesheet" href="/css/projects.css">
+  <link rel="stylesheet" href="/css/board.css">
+  <link rel="stylesheet" href="/css/tasks.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+<link rel="stylesheet" href="/css/industrial.css">
+</head>
+
+<body data-page="profile">
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="/dashboard.html"><span class="brand-mark">S</span><span>SHILPOSETU</span></a>
+      <div class="nav-section">Workspace</div>
+      <a class="nav-link" data-nav="dashboard" href="/dashboard.html">▦ Dashboard</a>
+      <a class="nav-link" data-nav="projects" href="/projects.html">▣ Projects</a>
+      <a class="nav-link" data-nav="tasks" href="/tasks.html">✓ My Tasks</a>
+      <a class="nav-link" data-nav="team" href="/team.html">◉ Team</a>
+      <div class="nav-section">Personal</div>
+      <a class="nav-link" data-nav="notifications" href="/notifications.html">◌ Notifications</a>
+      <a class="nav-link" data-nav="profile" href="/profile.html">◎ Profile</a>
+      <a class="nav-link" data-nav="settings" href="/settings.html">⚙ Settings</a>
+      <div class="sidebar-profile"><span class="avatar" data-user-initials>U</span>
+        <div class="grow"><strong data-user-name>User</strong>
+          <div class="muted sidebar-status" data-user-role>Workspace member</div>
+        </div><button type="button" class="btn btn-ghost btn-sm" data-logout title="Logout">↪</button>
+      </div>
+    </aside>
+    <main class="main">
+      <div class="mobile-header"><button type="button" class="icon-btn" data-sidebar-toggle>☰</button><a class="brand edge-inline-fix-1"
+          href="/dashboard.html"><span class="brand-mark">S</span>SHILPOSETU</a><a
+          href="/notifications.html">◌</a></div>
+      <header class="topbar">
+        <div class="search-wrap"><input class="input" id="globalSearch" placeholder="Search projects, tasks, people…"
+            aria-label="Global search">
+          <div id="searchResults" class="search-results hidden"></div>
+        </div>
+        <div class="top-actions"><a class="icon-btn notification-btn" href="/notifications.html"
+            aria-label="Notifications">◌<span class="notification-count hidden"
+              data-notification-count>0</span></a><span class="profile-short badge"><span
+              class="status-dot"></span><span data-user-name>User</span></span></div>
+      </header>
+      <div class="content">
+        <div class="page-head">
+          <div>
+            <div class="eyebrow">Professional identity</div>
+            <h1 class="page-title">My profile</h1>
+            <p class="muted">Keep your role, contact context and operational expertise visible to collaborators.</p>
+          </div>
+        </div>
+        <div class="profile-layout">
+          <aside class="card profile-preview"><div id="profileAvatar" class="profile-avatar">U</div><h2 id="profileName">User</h2><span id="profileHandle">@user</span><strong id="profileTitle">Workspace member</strong><span id="profileDepartment">Department</span><span id="profileLocation">Location</span><p id="profileBio"></p>
+            <div class="profile-completion"><div><span>PROFILE READINESS</span><strong id="profileCompletion">0%</strong></div><div class="progress"><span id="profileCompletionBar"></span></div></div>
+            <div class="profile-since"><small>MEMBER SINCE</small><strong id="memberSince">—</strong></div>
+          </aside>
+          <section class="card panel profile-form-panel"><div class="panel-head"><div><span class="section-kicker">IDENTITY RECORD</span><h2 class="panel-title">Professional details</h2></div></div>
+            <form id="profileForm" class="form-grid">
+              <div class="form-group form-span-full"><label for="fullName">Full name</label><input class="input" name="fullName" required maxlength="120" id="fullName"></div>
+              <div class="form-group"><label for="username">Username</label><input class="input" name="username" disabled id="username"></div>
+              <div class="form-group"><label for="email">Email</label><input class="input" name="email" disabled id="email"></div>
+              <div class="form-group"><label for="jobTitle">Job title</label><input class="input" name="jobTitle" maxlength="100" id="jobTitle" placeholder="Operations Engineer"></div>
+              <div class="form-group"><label for="department">Department</label><input class="input" name="department" maxlength="100" id="department" placeholder="Manufacturing"></div>
+              <div class="form-group"><label for="phone">Phone</label><input class="input" name="phone" maxlength="40" id="phone" autocomplete="tel" placeholder="+880 1XXXXXXXXX"></div>
+              <div class="form-group"><label for="location">Location</label><input class="input" name="location" maxlength="140" id="location" placeholder="Dhaka, Bangladesh"></div>
+              <div class="form-group"><label for="timezone">Timezone</label><select class="select" name="timezone" id="timezone"><option>Asia/Dhaka</option><option>Asia/Kolkata</option><option>Asia/Singapore</option><option>Europe/London</option><option>America/New_York</option><option>UTC</option></select></div>
+              <div class="form-group form-span-full"><label for="avatarUrl">Avatar image URL</label><input class="input" type="url" name="avatarUrl" id="avatarUrl" placeholder="https://example.com/avatar.jpg"></div>
+              <div class="form-group form-span-full"><label for="bio">Professional summary</label><textarea class="textarea" name="bio" maxlength="600" id="bio" placeholder="Your responsibilities, domain expertise and collaboration context…"></textarea></div>
+              <div class="profile-form-actions form-span-full"><span class="muted">Username and email are controlled by account security.</span><button class="btn btn-primary" type="submit">Save professional profile</button></div>
+            </form>
+          </section>
+        </div>
+      </div>
+    </main>
+    <nav class="mobile-bottom"><a href="/dashboard.html">▦<br>Home</a><a href="/projects.html">▣<br>Projects</a><a
+        href="/tasks.html">✓<br>Tasks</a><a href="/team.html">◉<br>Team</a><a href="/profile.html">◎<br>Me</a></nav>
+  </div>
+  <script src="/socket.io/socket.io.js"></script>
+  <script type="module" src="/js/profile.js"></script>
+</body>
+
+</html>

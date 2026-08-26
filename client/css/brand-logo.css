@@ -1,0 +1,176 @@
+/*
+  Shared ShilpoSetu logo
+  This automatically replaces the old S + SHILPOSETU branding.
+*/
+
+.brand {
+  position: relative;
+  gap: 0 !important;
+  min-width: 0 !important;
+  font-size: 0 !important;
+  overflow: hidden !important;
+}
+
+/* Hide the old logo elements without affecting the link. */
+.brand > span {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* Prevent duplicate logo if an img was already added. */
+.brand > .brand-logo {
+  display: none !important;
+}
+
+/* Main transparent logo. */
+.brand::before {
+  content: "";
+  display: block;
+  width: 156px;
+  height: 46px;
+  flex: 0 0 156px;
+
+  background-image: url("/assets/brand/shilposetu-logo.png");
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: contain;
+}
+
+/* Desktop sidebar logo. */
+.sidebar .brand {
+  width: 100%;
+  max-width: 100%;
+}
+
+.sidebar .brand::before {
+  width: 190px;
+  height: 55px;
+  flex-basis: 190px;
+  background-size: auto 55px;
+}
+
+/* Only the symbol will show when sidebar is collapsed. */
+.app-shell.sidebar-collapsed .sidebar .brand {
+  width: 36px !important;
+  max-width: 36px !important;
+  margin-inline: auto;
+  padding-inline: 0 !important;
+}
+
+.app-shell.sidebar-collapsed .sidebar .brand::before {
+  width: 36px;
+  height: 44px;
+  flex-basis: 36px;
+  background-size: auto 44px;
+}
+
+/* Mobile topbar logo. */
+.mobile-header .brand {
+  width: 128px;
+  max-width: 128px;
+  padding: 0 !important;
+}
+
+.mobile-header .brand::before {
+  width: 128px;
+  height: 35px;
+  flex-basis: 128px;
+}
+
+/* Landing navbar logo. */
+.landing-header .brand::before,
+.landing-nav .brand::before {
+  width: 210px;
+  height: 65px;
+  flex-basis: 210px;
+}
+
+/* Login and registration left panel. */
+.auth-art .brand::before {
+  width: 205px;
+  height: 60px;
+  flex-basis: 205px;
+}
+
+/* Mobile login/register card. */
+.auth-brand {
+  width: fit-content !important;
+  margin-bottom: 24px;
+  padding: 8px 10px !important;
+  border-radius: 5px;
+  background: var(--dark);
+}
+
+.auth-brand::before {
+  width: 148px;
+  height: 42px;
+  flex-basis: 148px;
+}
+
+/* Footer logo. */
+.industrial-footer .brand::before,
+.site-footer .brand::before {
+  width: 145px;
+  height: 42px;
+  flex-basis: 145px;
+}
+
+/* 404 page logo. */
+.not-found-brand::before {
+  width: 170px;
+  height: 50px;
+  flex-basis: 170px;
+}
+
+@media (max-width: 900px) {
+  /*
+    On mobile the sidebar opens at full width,
+    so the complete logo must remain visible.
+  */
+  .app-shell.sidebar-collapsed .sidebar .brand {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-inline: 0;
+    padding: 2px 9px 22px !important;
+  }
+
+  .app-shell.sidebar-collapsed .sidebar .brand::before {
+    width: 156px;
+    height: 44px;
+    flex-basis: 156px;
+    background-size: auto 44px;
+  }
+}
+
+@media (max-width: 600px) {
+  .landing-header .brand::before,
+  .landing-nav .brand::before {
+    width: 138px;
+    height: 40px;
+    flex-basis: 138px;
+  }
+
+  .mobile-header .brand {
+    width: 145px;
+    max-width: 145px;
+  }
+
+  .mobile-header .brand::before {
+    width: 145px;
+    height: 42px;
+    flex-basis: 145px;
+  }
+
+  .auth-brand::before {
+    width: 138px;
+    height: 40px;
+    flex-basis: 138px;
+  }
+}

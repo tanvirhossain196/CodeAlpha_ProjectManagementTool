@@ -1,0 +1,50 @@
+ALTER TABLE users ADD COLUMN IF NOT EXISTS job_title VARCHAR(100) NOT NULL DEFAULT '';
+ALTER TABLE users ADD COLUMN IF NOT EXISTS department VARCHAR(100) NOT NULL DEFAULT '';
+ALTER TABLE users ADD COLUMN IF NOT EXISTS phone VARCHAR(40) NOT NULL DEFAULT '';
+ALTER TABLE users ADD COLUMN IF NOT EXISTS location VARCHAR(140) NOT NULL DEFAULT '';
+ALTER TABLE users ADD COLUMN IF NOT EXISTS bio VARCHAR(600) NOT NULL DEFAULT '';
+ALTER TABLE users ADD COLUMN IF NOT EXISTS timezone VARCHAR(80) NOT NULL DEFAULT 'Asia/Dhaka';
+
+ALTER TABLE projects ADD COLUMN IF NOT EXISTS project_code VARCHAR(30) NOT NULL DEFAULT '';
+ALTER TABLE projects ADD COLUMN IF NOT EXISTS department VARCHAR(100) NOT NULL DEFAULT '';
+ALTER TABLE projects ADD COLUMN IF NOT EXISTS client_name VARCHAR(140) NOT NULL DEFAULT '';
+
+ALTER TABLE project_members ADD COLUMN IF NOT EXISTS is_starred BOOLEAN NOT NULL DEFAULT FALSE;
+
+ALTER TABLE tasks ADD COLUMN IF NOT EXISTS estimated_minutes INTEGER NOT NULL DEFAULT 0;
+ALTER TABLE tasks ADD COLUMN IF NOT EXISTS completed_at TIMESTAMPTZ;
+
+DO $$ BEGIN
+  ALTER TABLE tasks ADD CONSTRAINT tasks_estimated_minutes_range
+    CHECK (estimated_minutes BETWEEN 0 AND 100000);
+EXCEPTION WHEN duplicate_object THEN NULL; END $$;
+
+CREATE TABLE IF NOT EXISTS task_checklist_items (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  task_id UUID NOT NULL REFERENCES tasks(id) ON DELETE CASCADE,
+  content VARCHAR(240) NOT NULL CHECK (char_length(content) BETWEEN 1 AND 240),
+  is_completed BOOLEAN NOT NULL DEFAULT FALSE,
+  sort_order INTEGER NOT NULL DEFAULT 0,
+  created_by UUID REFERENCES users(id) ON DELETE SET NULL,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+  updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+
+CREATE TABLE IF NOT EXISTS task_time_entries (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  task_id UUID NOT NULL REFERENCES tasks(id) ON DELETE CASCADE,
+  user_id UUID NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  minutes INTEGER NOT NULL CHECK (minutes BETWEEN 1 AND 1440),
+  note VARCHAR(500) NOT NULL DEFAULT '',
+  work_date DATE NOT NULL DEFAULT CURRENT_DATE,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+
+CREATE INDEX IF NOT EXISTS idx_checklist_task_order
+  ON task_checklist_items(task_id, sort_order, created_at);
+CREATE INDEX IF NOT EXISTS idx_time_entries_task_date
+  ON task_time_entries(task_id, work_date DESC);
+CREATE INDEX IF NOT EXISTS idx_time_entries_user_date
+  ON task_time_entries(user_id, work_date DESC);
+CREATE INDEX IF NOT EXISTS idx_projects_code
+  ON projects(project_code) WHERE project_code <> '';

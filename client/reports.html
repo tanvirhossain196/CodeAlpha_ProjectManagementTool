@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Operational Reports · ShilpoSetu</title>
+  <link rel="stylesheet" href="/css/reset.css">
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/layout.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/dashboard.css">
+  <link rel="stylesheet" href="/css/projects.css">
+  <link rel="stylesheet" href="/css/board.css">
+  <link rel="stylesheet" href="/css/tasks.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="stylesheet" href="/css/industrial.css">
+</head>
+<body data-page="reports">
+<div class="app-shell">
+  <aside class="sidebar">
+    <a class="brand" href="/dashboard.html"><span class="brand-mark">S</span><span>SHILPOSETU</span></a>
+    <div class="nav-section">Workspace</div>
+    <a class="nav-link" data-nav="dashboard" href="/dashboard.html">Dashboard</a>
+    <a class="nav-link" data-nav="projects" href="/projects.html">Projects</a>
+    <a class="nav-link" data-nav="tasks" href="/tasks.html">My Tasks</a>
+    <a class="nav-link" data-nav="team" href="/team.html">Team</a>
+    <div class="nav-section">Personal</div>
+    <a class="nav-link" data-nav="notifications" href="/notifications.html">Notifications</a>
+    <a class="nav-link" data-nav="profile" href="/profile.html">Profile</a>
+    <a class="nav-link" data-nav="settings" href="/settings.html">Settings</a>
+    <div class="sidebar-profile"><span class="avatar" data-user-initials>U</span><div class="grow"><strong data-user-name>User</strong><div class="muted sidebar-status" data-user-role>Workspace member</div></div><button type="button" class="btn btn-ghost btn-sm" data-logout title="Logout">↪</button></div>
+  </aside>
+  <main class="main">
+    <div class="mobile-header"><button type="button" class="icon-btn" data-sidebar-toggle>☰</button><a class="brand mobile-brand" href="/dashboard.html"><span class="brand-mark">S</span>SHILPOSETU</a><a href="/notifications.html">◌</a></div>
+    <header class="topbar"><div class="search-wrap"><input class="input" id="globalSearch" placeholder="Search projects, tasks, people…" aria-label="Global search"><div id="searchResults" class="search-results hidden"></div></div><div class="top-actions"><a class="icon-btn notification-btn" href="/notifications.html" aria-label="Notifications">◌<span class="notification-count hidden" data-notification-count>0</span></a><span class="profile-short badge"><span class="status-dot"></span><span data-user-name>User</span></span></div></header>
+    <div class="content"><div id="reportsRoot">
+      <div class="page-head report-head"><div><div class="eyebrow">Portfolio intelligence</div><h1 class="page-title">Operational reports</h1><p class="muted">Project health, execution throughput, effort and team workload in one control view.</p><small id="reportGenerated" class="report-generated">Compiling current data…</small></div><div class="actions"><button type="button" id="printReport" class="btn btn-secondary">Print view</button><button type="button" id="exportReport" class="btn btn-primary">Export CSV</button></div></div>
+      <div id="reportMetrics" class="metric-grid metric-grid-six"></div>
+      <section class="card panel report-section"><div class="panel-head"><div><span class="section-kicker">DELIVERY HEALTH</span><h2 class="panel-title">Project control register</h2></div><span class="badge neutral">Live portfolio</span></div><div id="projectHealth" class="report-project-list"></div></section>
+      <div class="report-mix-grid"><section class="card panel"><div class="panel-head"><div><span class="section-kicker">WORKFLOW</span><h2 class="panel-title">Status mix</h2></div></div><div id="statusMix"></div></section><section class="card panel"><div class="panel-head"><div><span class="section-kicker">RISK QUEUE</span><h2 class="panel-title">Open priority mix</h2></div></div><div id="priorityMix"></div></section></div>
+      <section class="report-section"><div class="panel-head"><div><span class="section-kicker">TEAM CAPACITY</span><h2 class="panel-title">Workload signals</h2></div></div><div id="workloadGrid" class="workload-grid"></div></section>
+    </div></div>
+  </main>
+  <nav class="mobile-bottom"><a href="/dashboard.html">▦<br>Home</a><a href="/projects.html">▣<br>Projects</a><a href="/tasks.html">✓<br>Tasks</a><a href="/team.html">◉<br>Team</a><a href="/profile.html">◎<br>Me</a></nav>
+</div>
+<script src="/socket.io/socket.io.js"></script>
+<script type="module" src="/js/reports.js"></script>
+</body>
+</html>

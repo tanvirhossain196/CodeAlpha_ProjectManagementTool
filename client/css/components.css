@@ -1,0 +1,40 @@
+.metric-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.metric{padding:17px}.metric-label{font-size:11px;color:var(--muted);font-weight:900;letter-spacing:.07em}
+.metric-value{font-size:28px;font-weight:900;margin:6px 0 0}.metric-meta{font-size:12px;color:var(--muted)}
+.section-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:16px;margin-top:16px}.panel{padding:18px}.panel-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}.panel-title{font-size:16px;font-weight:900;margin:0}
+.progress{height:8px;background:#e2e8f0;border-radius:999px;overflow:hidden}.progress>span{display:block;height:100%;background:var(--green)}
+.list-row{display:flex;gap:12px;align-items:center;padding:11px 0;border-bottom:1px solid #edf2f7}.list-row:last-child{border:0}.grow{flex:1;min-width:0}.truncate{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.activity-icon{width:30px;height:30px;border-radius:8px;background:#f8fafc;border:1px solid #e2e8f0;display:grid;place-items:center;font-size:12px}
+.project-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.project-card{padding:17px;transition:.18s}.project-card:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+.project-card h3{font-size:17px;margin:10px 0 8px}.project-meta{display:flex;justify-content:space-between;color:var(--muted);font-size:12px;margin-top:14px}.project-tags{display:flex;gap:6px;flex-wrap:wrap}
+.table-wrap{overflow:auto}.table{width:100%;border-collapse:collapse}.table th,.table td{padding:11px 12px;text-align:left;border-bottom:1px solid #e2e8f0;white-space:nowrap}.table th{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.hero{background:var(--dark);color:#fff;min-height:680px;position:relative;overflow:hidden}.landing-nav{height:74px;display:flex;align-items:center;justify-content:space-between}.landing-nav .brand{padding:0}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center;padding:80px 0 110px}.hero h1{font-size:58px;line-height:1.03;letter-spacing:-.035em;margin:14px 0 20px}.hero p{font-size:18px;color:#b8c4d6;max-width:640px}.hero-actions{display:flex;gap:11px;margin-top:28px}.hero-preview{background:#111c2f;border:1px solid #2f405c;border-radius:14px;padding:14px;box-shadow:0 40px 80px rgba(0,0,0,.35);transform:rotate(1deg)}.preview-bar{height:32px;border-radius:7px;background:#172033;margin-bottom:11px}.preview-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.preview-col{background:#0f1929;border:1px solid #26344a;border-radius:9px;padding:9px}.preview-card{height:66px;background:#1c2a40;border-left:3px solid var(--amber);border-radius:6px;margin:8px 0}
+.features{padding:84px 0;background:#fff}.section-title{text-align:center;max-width:700px;margin:0 auto 38px}.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.feature-card{padding:22px;border:1px solid #e2e8f0;border-radius:12px}.feature-card strong{font-size:16px}.feature-icon{width:38px;height:38px;background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;display:grid;place-items:center;margin-bottom:15px}
+.auth-layout{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;background:#fff}.auth-art{background:var(--dark);color:white;padding:60px;display:flex;flex-direction:column;justify-content:center}.auth-art h1{font-size:46px;line-height:1.08}.auth-card-wrap{display:grid;place-items:center;padding:36px}.auth-card{width:min(460px,100%)}.auth-card h2{font-size:28px}.auth-card form{display:grid;gap:14px}
+
+
+/* ShilpoSetu static HTML diagnostics fixes */
+.sidebar-status{font-size:11px}
+.mobile-brand{padding:0}
+.team-project-select{min-width:220px}
+.task-page-skeleton{height:300px}
+.not-found-page{min-height:100vh;display:grid;place-items:center;padding:20px}
+.not-found-content{text-align:center}
+.not-found-title{font-size:72px;margin:8px}
+.auth-art-copy{color:#94a3b8;font-size:17px}
+.auth-brand{color:var(--dark);padding:0 0 32px}
+.auth-switch{margin-top:18px}
+.auth-switch-link{color:var(--blue);font-weight:800}
+.landing-login-btn{color:#fff}
+.brand-accent{color:var(--amber)}
+.landing-footer{background:var(--dark);color:#94a3b8;padding:32px}
+.landing-footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.landing-footer-brand{color:#fff}
+.narrow-panel{max-width:720px}
+.settings-toggle{width:20px;height:20px}
+.form-span-full{grid-column:1/-1}
+
+
+/* Edge Tools inline-style cleanup */
+.edge-inline-fix-1{padding:0}
+.edge-inline-fix-2{color:var(--blue);font-weight:800}

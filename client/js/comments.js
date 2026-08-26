@@ -1,0 +1,1 @@
+// Comment UI is shared by board.js and task.js. Backend CRUD lives under /api/tasks/:id/comments and /api/comments/:id.

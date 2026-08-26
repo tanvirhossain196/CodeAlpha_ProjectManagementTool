@@ -1,0 +1,2 @@
+.project-summary{display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center;padding:18px;margin-bottom:16px}.project-summary h2{margin-bottom:5px}
+.member-list{display:grid;gap:8px}.member-item{display:flex;align-items:center;gap:10px;padding:10px;border:1px solid #e2e8f0;border-radius:9px}
